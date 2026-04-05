@@ -7,6 +7,7 @@ interface Tier {
   popular?: boolean;
   popularLabel?: string;
   bookUrl?: string;
+  ariaLabel: string;
 }
 
 interface Props {
@@ -64,6 +65,7 @@ const { id, bg, headline, sell, includes, footnote, tiers } = Astro.props;
               href={tier.bookUrl ?? "#"}
               target={tier.bookUrl ? "_blank" : undefined}
               rel={tier.bookUrl ? "noopener noreferrer" : undefined}
+              aria-label={tier.ariaLabel}
               class:list={[
                 "inline-block font-medium px-6 py-3 rounded-md transition-all cursor-pointer mt-auto",
                 tier.popular
