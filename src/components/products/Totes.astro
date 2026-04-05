@@ -1,0 +1,49 @@
+---
+import ProductSection from "../ProductSection.astro";
+
+const tiers = [
+  {
+    name: "Dorm room",
+    price: "$69",
+    totes: 10,
+    detail: "2 week rental",
+    popular: false,
+    bookUrl: "https://square.link/u/nq0AcV0i",
+  },
+  {
+    name: "Studio/1-Bed",
+    price: "$99",
+    totes: 20,
+    detail: "2 week rental",
+    popular: true,
+    popularLabel: "Most popular",
+    bookUrl: "https://square.link/u/vbeE3tMs",
+  },
+  {
+    name: "1-2 Bed",
+    price: "$129",
+    totes: 30,
+    detail: "2 week rental",
+    popular: false,
+    bookUrl: "https://square.link/u/dQsvmfU7",
+  },
+  {
+    name: "2 Bed",
+    price: "$179",
+    totes: 45,
+    detail: "2 week rental",
+    popular: false,
+    bookUrl: "https://square.link/u/R99lBDy5",
+  },
+];
+---
+
+<ProductSection
+  id="totes"
+  bg="bg-page"
+  headline="Totes"
+  sell="Skip the cardboard hunt, the tape gun fights, and the trunk Tetris. Choose the pack that fits your space and we'll deliver sturdy, reusable totes right to your door, ready to fill, stack, and go."
+  includes={`Every package includes totes, plus local delivery and pickup. Need more time? <a href="#faq-what-if-i-need-the-totes-longer-than-two-weeks" class="underline hover:text-brand transition-colors">Easy extensions available</a>.`}
+  footnote={`*Delivery fees may apply outside the local campus area. <a href="#faq-how-do-delivery-zones-work" class="underline hover:text-brand transition-colors">See delivery zones</a>.`}
+  tiers={tiers}
+/>

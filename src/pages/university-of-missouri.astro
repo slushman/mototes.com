@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CampusHero from "../components/campus/CampusHero.astro";
+import CampusDates from "../components/campus/CampusDates.astro";
+import CampusFAQ from "../components/campus/CampusFAQ.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import WhyTotes from "../components/WhyTotes.astro";
+import ProductOverview from "../components/ProductOverview.astro";
+import Totes from "../components/products/Totes.astro";
+import TotesAndStow from "../components/products/TotesAndStow.astro";
+import MoTotesAndStow from "../components/products/MoTotesAndStow.astro";
+import FoundingOffer from "../components/FoundingOffer.astro";
+import CTABanner from "../components/CTABanner.astro";
+import mizzou from "../data/mizzou";
+---
+
+<Layout
+  title={`MO Totes at ${mizzou.shortName}, Reusable Tote Rentals for ${mizzou.name} Students`}
+  description={`Rent reusable plastic totes for your ${mizzou.shortName} move-in or move-out. We deliver to ${mizzou.location}, you pack, we pick up. No cardboard, no tape, no stress.`}
+  colorOverrides={mizzou.colorOverrides}
+>
+  <CampusHero school={mizzou} />
+  <CampusDates school={mizzou} />
+  <HowItWorks />
+  <WhyTotes />
+  <ProductOverview />
+  <Totes />
+  <TotesAndStow />
+  <MoTotesAndStow />
+  <FoundingOffer />
+  <CampusFAQ school={mizzou} />
+  <CTABanner />
+</Layout>

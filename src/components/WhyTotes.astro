@@ -1,0 +1,42 @@
+---
+const cards = [
+  {
+    icon: "♻️",
+    title: "Zero waste",
+    desc: "No cardboard in landfills. Each tote replaces ~15 single-use boxes.",
+  },
+  {
+    icon: "🧱",
+    title: "Actually sturdy",
+    desc: "Waterproof hard plastic won't cave in under a stack of textbooks.",
+  },
+  {
+    icon: "⏱",
+    title: "No box hunting",
+    desc: "No begging for boxes at the liquor store or ordering them a week early. They just show up.",
+  },
+  {
+    icon: "💰",
+    title: "Saves money",
+    desc: "When you add up tape, boxes, and time, totes win on cost.",
+  },
+];
+---
+
+<section id="why-totes" class="bg-page py-14 md:py-20">
+  <div class="max-w-[1160px] mx-auto px-6 md:px-12">
+    <h2 class="font-display text-[26px] md:text-[34px] font-medium text-center mb-12">
+      Why students are switching.
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {cards.map((card) => (
+        <div class="bg-page border border-border rounded-lg p-5 px-6">
+          <div class="text-2xl mb-3" role="img" aria-label={card.title}>{card.icon}</div>
+          <h3 class="font-medium text-text-primary mb-1">{card.title}</h3>
+          <p class="text-text-muted leading-relaxed">{card.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

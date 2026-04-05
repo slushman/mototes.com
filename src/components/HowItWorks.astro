@@ -1,0 +1,31 @@
+---
+const steps = [
+  { num: 1, title: "Book online", desc: "Pick your tote count and delivery date." },
+  { num: 2, title: "We deliver", desc: "Totes arrive clean and ready to pack." },
+  { num: 3, title: "Pack and move", desc: "Stack, roll, and load your stuff with ease." },
+  { num: 4, title: "Schedule pickup", desc: "Book a pickup and we'll come to you." },
+];
+---
+
+<section id="how-it-works" class="bg-page-alt py-14 md:py-20">
+  <div class="max-w-[1160px] mx-auto px-6 md:px-12">
+    <h2 class="font-display text-[26px] md:text-[34px] font-medium text-center mb-12">
+      Four steps, zero cardboard drama.
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0 relative">
+      {steps.map((step, i) => (
+        <div class="flex flex-col items-center text-center relative">
+          <div class="w-10 h-10 rounded-full bg-brand text-on-brand font-medium flex items-center justify-center mb-4 relative z-10">
+            {step.num}
+          </div>
+          {i < steps.length - 1 && (
+            <div class="hidden md:block absolute top-5 left-[calc(50%+20px)] w-[calc(100%-40px)] h-px bg-border" />
+          )}
+          <h3 class="font-medium text-text-primary mb-1">{step.title}</h3>
+          <p class="text-text-muted max-w-[200px]">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

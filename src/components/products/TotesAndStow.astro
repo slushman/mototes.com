@@ -1,0 +1,48 @@
+---
+import ProductSection from "../ProductSection.astro";
+
+const tiers = [
+  {
+    name: "Dorm",
+    price: "$150",
+    totes: 10,
+    detail: "full summer",
+    popular: false,
+    bookUrl: "https://square.link/u/B74l0NUq",
+  },
+  {
+    name: "Studio/1-Bed",
+    price: "$200",
+    totes: 20,
+    detail: "full summer",
+    popular: true,
+    popularLabel: "Sweet spot",
+    bookUrl: "https://square.link/u/1uDLAVO7",
+  },
+  {
+    name: "1-2 Bed",
+    price: "$260",
+    totes: 30,
+    detail: "full summer",
+    popular: false,
+    bookUrl: "https://square.link/u/Jk9glhSw",
+  },
+  {
+    name: "2 Bed",
+    price: "$325",
+    totes: 45,
+    detail: "full summer",
+    popular: false,
+    bookUrl: "https://square.link/u/et7eOs02",
+  },
+];
+---
+
+<ProductSection
+  id="totes-and-stow"
+  bg="bg-page-alt"
+  headline="Totes & Stow"
+  sell="Don't haul everything home or pay to ship boxes back and forth. Pack your totes, bring them to the campus drop-off point, and we'll store them in our clean, secure facility all summer."
+  includes="Every package includes totes and secure storage for the full summer. Bring your packed totes to the campus drop-off point, and pick them up from the same spot in the fall."
+  tiers={tiers}
+/>

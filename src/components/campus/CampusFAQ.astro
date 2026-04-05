@@ -1,0 +1,48 @@
+---
+import type { SchoolData } from "../../data/schools";
+import { globalFaqSections } from "../../data/globalFaqs";
+
+interface Props {
+  school: SchoolData;
+}
+
+const { school } = Astro.props;
+
+// School-specific FAQs go first, then global
+const allSections = [...school.faqs, ...globalFaqSections];
+---
+
+<section id="faq" class="bg-page py-14 md:py-20">
+  <div class="max-w-[700px] mx-auto px-6 md:px-12">
+    <h2 class="font-display text-[26px] md:text-[34px] font-medium text-center mb-12">
+      Good questions.
+    </h2>
+
+    {allSections.map((section) => (
+      <div class="mb-10 last:mb-0">
+        <h3 class="font-display text-lg font-medium text-text-primary mb-2">{section.title}</h3>
+        <div class="flex flex-col divide-y divide-border">
+          {section.faqs.map((faq) => (
+            <details class="group py-4" name={`faq-${section.title}`} id={`faq-${faq.q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}>
+              <summary class="flex items-center justify-between cursor-pointer list-none font-medium text-text-primary min-h-11">
+                {faq.q}
+                <svg
+                  class="w-5 h-5 text-text-muted transition-transform duration-200 group-open:rotate-45 shrink-0 ml-4"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="10" y1="4" x2="10" y2="16" />
+                  <line x1="4" y1="10" x2="16" y2="10" />
+                </svg>
+              </summary>
+              <p class="text-text-muted leading-relaxed pt-2 pb-1" set:html={faq.a}>
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

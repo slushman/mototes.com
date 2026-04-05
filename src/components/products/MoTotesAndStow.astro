@@ -1,0 +1,44 @@
+---
+import ProductSection from "../ProductSection.astro";
+
+const tiers = [
+  {
+    name: "Dorm",
+    price: "$348",
+    totes: 10,
+    detail: "full summer",
+    popular: false,
+  },
+  {
+    name: "Studio/1-Bed",
+    price: "$398",
+    totes: 20,
+    detail: "full summer",
+    popular: true,
+    popularLabel: "Full service",
+  },
+  {
+    name: "1-2 Bed",
+    price: "$458",
+    totes: 30,
+    detail: "full summer",
+    popular: false,
+  },
+  {
+    name: "2 Bed",
+    price: "$523",
+    totes: 45,
+    detail: "full summer",
+    popular: false,
+  },
+];
+---
+
+<ProductSection
+  id="mo-totes-and-stow"
+  bg="bg-page"
+  headline="Mo', Totes, & Stow"
+  sell="The hands-off option. We pick up your packed totes from your dorm, store everything over the summer, and deliver them back when you return in the fall. You never have to carry a thing."
+  includes="Every package includes totes, secure summer storage, plus move-out pickup ($99) and move-in delivery ($99) right from your dorm."
+  tiers={tiers}
+/>

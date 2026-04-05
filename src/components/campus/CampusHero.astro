@@ -1,0 +1,42 @@
+---
+import type { SchoolData } from "../../data/schools";
+
+interface Props {
+  school: SchoolData;
+}
+
+const { school } = Astro.props;
+---
+
+<section id="hero" class="bg-page-alt pt-28 pb-0">
+  <div class="max-w-[680px] mx-auto px-6 text-center">
+    <span class="inline-block bg-brand text-on-brand font-medium tracking-wider px-4 py-1.5 rounded-pill mb-6 text-xs">
+      MO Totes at {school.shortName}
+    </span>
+
+    <h1 class="font-display text-[32px] md:text-[44px] font-medium leading-[1.15] text-text-primary mb-5">
+      {school.heroHeadline}
+    </h1>
+
+    <p class="text-text-muted max-w-[520px] mx-auto mb-8">
+      {school.heroSubhead}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+      <a
+        href="#pricing"
+        class="inline-block bg-action text-on-action font-medium px-7 py-3.5 rounded-md hover:bg-action-dark transition-all cursor-pointer"
+      >
+        Get your totes &rarr;
+      </a>
+      <a
+        href="#how-it-works"
+        class="inline-block border-[1.5px] border-text-primary text-text-primary font-medium px-7 py-3.5 rounded-md hover:bg-brand-light transition-all cursor-pointer"
+      >
+        See how it works
+      </a>
+    </div>
+
+    <p class="text-text-muted pb-10">Free delivery + pickup in Columbia</p>
+  </div>
+</section>

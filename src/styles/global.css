@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #16A34A;
+  --color-brand-light: #DCFCE7;
+  --color-brand-dark: #14532D;
+  --color-brand-deep: #052E16;
+  --color-action: #EA580C;
+  --color-action-light: #FFF7ED;
+  --color-action-dark: #9A3412;
+  --color-on-brand: #FFFFFF;
+  --color-on-action: #FFFFFF;
+  --color-page: #FFFFFF;
+  --color-page-alt: #F7F7F5;
+  --color-text-primary: #111827;
+  --color-text-muted: #4B5563;
+  --color-border: #E5E7EB;
+  --color-accent: #92400E;
+  --color-accent-light: #FEF3C7;
+
+  --font-brand: 'Poppins', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 100px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 80px;
+  --spacing-3xl: 120px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect motion preferences (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-page);
+  line-height: 1.7;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
