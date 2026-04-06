@@ -27,7 +27,7 @@ export const globalFaqSections: SchoolFAQSection[] = [
     faqs: [
       {
         q: "What comes with my tote rental?",
-        a: "The totes, obviously. We also include zip ties, labels, and dollies to help you move the totes around easily.",
+        a: "The totes, obviously. We also include zip ties, labels, and inventory sheets. You can optionally rent or buy other moving supplies like dollies and bubble wrap",
       },
       {
         q: "What if I need the totes longer than two weeks?",
