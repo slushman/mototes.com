@@ -72,7 +72,7 @@ export const globalFaqSections: SchoolFAQSection[] = [
       },
       {
         q: "Are my items insured while in storage?",
-        a: "Yes, if any items are lost or damaged while we're storing them, we will replace them. We'll need any claims filed within 24 hours of receiving your totes back. We will require receipts or proof of purchase for all reimbursements.",
+        a: "Yes, if any items are lost or damaged while we're storing them, we will replace them, up to $250. Please let us know about items valued over $250 on your inventory sheet. We will require receipts or proof of purchase for all reimbursements. We'll need any claims filed within 24 hours of receiving your totes back.  Claims after 24 hours are not eligible.",
       },
     ],
   },
