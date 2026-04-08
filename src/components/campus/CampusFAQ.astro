@@ -1,6 +1,7 @@
 ---
 import type { SchoolData } from "../../data/schools";
 import { globalFaqSections } from "../../data/globalFaqs";
+import EmailCTA from "../EmailCTA.astro";
 
 interface Props {
   school: SchoolData;
@@ -44,5 +45,7 @@ const allSections = [...school.faqs, ...globalFaqSections];
         </div>
       </div>
     ))}
+
+    <EmailCTA />
   </div>
 </section>

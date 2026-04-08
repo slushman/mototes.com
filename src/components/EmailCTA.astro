@@ -1,0 +1,55 @@
+---
+/**
+ * Contact CTA with obfuscated mailto and sms links.
+ * Addresses are split across data attributes and assembled at runtime
+ * so crawlers/scrapers can't harvest them from the HTML source.
+ */
+---
+
+<div class="text-center mt-14">
+  <p class="font-display text-lg font-medium text-text-primary mb-4">
+    Still have questions?
+  </p>
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <a
+      id="email-cta"
+      class="inline-block bg-action text-on-action font-medium px-7 py-3.5 rounded-md hover:bg-action-dark transition-all cursor-pointer"
+      data-u="chris"
+      data-d="mototes.com"
+      role="link"
+      aria-label="Send us an email"
+    >
+      Send us an email
+    </a>
+    <a
+      id="sms-cta"
+      class="inline-block bg-action text-on-action font-medium px-7 py-3.5 rounded-md hover:bg-action-dark transition-all cursor-pointer"
+      data-a="636"
+      data-b="445"
+      data-c="0296"
+      role="link"
+      aria-label="Send us a text"
+    >
+      Send us a text
+    </a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const emailLink = document.getElementById('email-cta');
+    if (emailLink) {
+      const u = emailLink.getAttribute('data-u');
+      const d = emailLink.getAttribute('data-d');
+      emailLink.setAttribute('href', 'mai' + 'lto:' + u + '@' + d);
+    }
+
+    const smsLink = document.getElementById('sms-cta');
+    if (smsLink) {
+      const a = smsLink.getAttribute('data-a');
+      const b = smsLink.getAttribute('data-b');
+      const c = smsLink.getAttribute('data-c');
+      smsLink.setAttribute('href', 'sm' + 's:' + a + b + c);
+    }
+  });
+</script>

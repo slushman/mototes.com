@@ -15,6 +15,28 @@ const campuses = [
           </a>
         ))}
       </div>
+      <p class="text-on-brand/80 mt-2">
+        Want us at your campus?
+        <a
+          id="campus-email-cta"
+          class="underline text-on-brand font-medium hover:text-on-brand/80 transition-colors"
+          data-u="chris"
+          data-d="mototes.com"
+          role="link"
+          aria-label="Send us an email"
+        >Let us know!</a>
+      </p>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('campus-email-cta');
+    if (link) {
+      const u = link.getAttribute('data-u');
+      const d = link.getAttribute('data-d');
+      link.setAttribute('href', 'mai' + 'lto:' + u + '@' + d);
+    }
+  });
+</script>
