@@ -34,22 +34,27 @@ const mizzou: SchoolData = {
         {
           q: "When do totes get delivered for fall move-in?",
           a: "We deliver totes one week before Mizzou's fall move-in date in mid-August. Delivery within 25 miles of Columbia is free; see our delivery zones above for pricing outside that area.",
+          products: ["totes"],
         },
         {
           q: "When do I get totes for spring move-out?",
           a: "We bring them the weekend before Mizzou's spring move-out in mid-May, which should give you plenty of time to get packed up during finals week.",
+          products: ["totes"],
         },
         {
           q: "Where do you store my stuff over the summer?",
           a: "We have a clean, secure storage facility in Columbia, MO, just minutes from campus. Your totes stay local so delivery is quick when you're back in the fall.",
+          products: ["totes-stow", "mo-totes-stow"],
         },
         {
           q: "Can you deliver to my dorm in the Res Halls?",
           a: "Yes! We deliver to all Mizzou residence halls and off-campus apartments in Columbia. We'll coordinate delivery times that work with Mizzou's move-in schedule.",
+          products: ["totes", "mo-totes-stow"],
         },
         {
           q: "Do you handle Greek housing and off-campus moves too?",
           a: "Absolutely. Whether you're in a dorm, Greek house, or off-campus apartment, we've got you covered.",
+          products: ["totes"],
         },
         {
           q: "How are the move-out dates scheduled?",
@@ -59,6 +64,7 @@ const mizzou: SchoolData = {
     },
     {
       title: "Delivery zones",
+      products: ["totes"],
       faqs: [
         {
           q: "What areas do you deliver to?",

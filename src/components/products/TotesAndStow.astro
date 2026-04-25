@@ -1,6 +1,12 @@
 ---
 import ProductSection from "../ProductSection.astro";
 
+interface Props {
+  bg?: "bg-page" | "bg-page-alt";
+}
+
+const { bg = "bg-page-alt" } = Astro.props;
+
 const tiers = [
   {
     name: "Dorm",
@@ -44,9 +50,9 @@ const tiers = [
 
 <ProductSection
   id="totes-and-stow"
-  bg="bg-page-alt"
+  bg={bg}
   headline="Totes & Stow"
-  sell="Don't haul everything home or pay to ship boxes back and forth. Pack your totes, bring them to the campus drop-off point, and we'll store them in our clean, secure facility all summer."
-  includes="Every package includes totes and secure storage for the full summer. Bring your packed totes to the campus drop-off point, and pick them up from the same spot in the fall."
+  sell="We drop off totes on campus. Pack them, bring them to our campus spot, and we'll store everything in our clean, secure facility all summer. Pick them up from campus in the fall."
+  includes="Every package includes on-campus tote drop-off, secure summer storage, and on-campus pickup in the fall."
   tiers={tiers}
 />

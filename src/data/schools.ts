@@ -1,11 +1,18 @@
+/** Product slugs used to filter content on per-product landing pages. */
+export type ProductSlug = "totes" | "totes-stow" | "mo-totes-stow";
+
 export interface SchoolFAQ {
   q: string;
   a: string;
+  /** If set, this FAQ is only shown on these product pages (and the all-products school page). */
+  products?: ProductSlug[];
 }
 
 export interface SchoolFAQSection {
   title: string;
   faqs: SchoolFAQ[];
+  /** If set, this section is only shown on these product pages (and the all-products school page). */
+  products?: ProductSlug[];
 }
 
 export interface SchoolData {

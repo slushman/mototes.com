@@ -1,22 +1,42 @@
-<section id="founding" class="bg-page-alt py-14 md:py-20">
+---
+interface Props {
+  href?: string;
+  bg?: "bg-page" | "bg-page-alt";
+  badge?: string;
+  headline?: string;
+  body?: string;
+  ctaLabel?: string;
+}
+
+const {
+  href = "#pricing",
+  bg = "bg-page-alt",
+  badge = "Limited spots",
+  headline = "Spots are limited, don't wait until moving week.",
+  body = "Whether you're moving in or moving out, popular dates fill up fast. The sooner you book, the more flexibility you'll have with your delivery and pickup schedule.",
+  ctaLabel = "Reserve your spot",
+} = Astro.props;
+---
+
+<section id="founding" class={`${bg} py-14 md:py-20`}>
   <div class="max-w-[680px] mx-auto px-6 md:px-12 text-center">
     <span class="inline-block bg-accent-light text-accent font-medium tracking-wider uppercase px-4 py-1.5 rounded-pill mb-6 text-sm">
-      Limited spots
+      {badge}
     </span>
 
     <h2 class="font-display text-[26px] md:text-[34px] font-medium mb-4">
-      Spots are limited, don't wait until moving week.
+      {headline}
     </h2>
 
     <p class="text-text-muted leading-relaxed mb-8 max-w-[560px] mx-auto">
-      Whether you're moving in or moving out, popular dates fill up fast. The sooner you book, the more flexibility you'll have with your delivery and pickup schedule.
+      {body}
     </p>
 
     <a
-      href="#pricing"
+      href={href}
       class="inline-block bg-action text-on-action font-medium px-7 py-3.5 rounded-md hover:bg-action-dark transition-all cursor-pointer"
     >
-      Reserve your spot &rarr;
+      {ctaLabel} &rarr;
     </a>
   </div>
 </section>

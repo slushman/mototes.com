@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CampusProductHero from "../../components/campus/CampusProductHero.astro";
+import CampusDates from "../../components/campus/CampusDates.astro";
+import CampusFAQ from "../../components/campus/CampusFAQ.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import WhyTotes from "../../components/WhyTotes.astro";
+import TotesAndStow from "../../components/products/TotesAndStow.astro";
+import FoundingOffer from "../../components/FoundingOffer.astro";
+import CTABanner from "../../components/CTABanner.astro";
+import mizzou from "../../data/mizzou";
+import { products } from "../../data/products";
+
+const product = products["totes-stow"];
+---
+
+<Layout
+  title={`Totes & Stow at ${mizzou.shortName}, Tote Rental + Summer Storage for ${mizzou.name} Students`}
+  description={`Pack into reusable totes and let us store them in ${mizzou.location} all summer. Skip the haul home and pick up where you left off in the fall.`}
+  colorOverrides={mizzou.colorOverrides}
+>
+  <CampusProductHero school={mizzou} product={product} />
+  <CampusDates school={mizzou} />
+  <HowItWorks variant={product.slug} />
+  <WhyTotes />
+  <TotesAndStow bg="bg-page-alt" />
+  <FoundingOffer
+    href={product.pricingAnchor}
+    bg="bg-page"
+    badge={product.foundingOffer?.badge}
+    headline={product.foundingOffer?.headline}
+    body={product.foundingOffer?.body}
+    ctaLabel={product.foundingOffer?.ctaLabel}
+  />
+  <CampusFAQ school={mizzou} product={product.slug} bg="bg-page-alt" />
+  <CTABanner
+    headline={product.ctaHeadline}
+    subline={product.ctaSubline}
+    href={product.pricingAnchor}
+  />
+</Layout>

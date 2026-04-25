@@ -32,6 +32,7 @@ export const globalFaqSections: SchoolFAQSection[] = [
       {
         q: "What if I need the totes longer than two weeks?",
         a: "You can easily extend your rental by the week. Rates depend on your package:<br><br>Dorm: $39/week<br>Studio/1-Bed: $59/week<br>1-2 Bed: $79/week<br>2 Bed: $109/week<br><br>No penalties, no surprise fees.",
+        products: ["totes"],
       },
       {
         q: "Where do I get packing materials like bubble wrap, newspaper, etc?",
@@ -41,6 +42,7 @@ export const globalFaqSections: SchoolFAQSection[] = [
   },
   {
     title: "Storage",
+    products: ["totes-stow", "mo-totes-stow"],
     faqs: [
       {
         q: "Is there anything I shouldn't put into a tote?",
@@ -82,30 +84,37 @@ export const globalFaqSections: SchoolFAQSection[] = [
       {
         q: "How do I know which zone I'm in?",
         a: "Your delivery zone is determined by your pickup or drop-off address. Zone fees are calculated automatically when you enter your address at checkout. If you have questions about your zone, contact us before booking.",
+        products: ["totes"],
       },
       {
         q: "Can I drop off totes myself to avoid the delivery fee?",
         a: "Contact us if you have a unique situation and we'll do our best to work something out.",
+        products: ["totes"],
       },
       {
         q: "Do I have to be home for delivery and pickup?",
         a: "For delivery, yes, someone needs to receive the totes. We'll arrange the pick-up details depending on where we're going. For example, if we're picking up from a house, we could pick them up from the porch. If we're picking up from a dorm after your move-in date, we'll arrange a date where we pick up everyone's totes at that dorm.",
+        products: ["totes"],
       },
       {
         q: "When do I receive my totes for move out?",
         a: "We bring them the weekend before move-out, which should give you plenty of time to get packed up during finals week.",
+        products: ["totes"],
       },
       {
         q: "When do I receive my totes for move in?",
         a: "We bring them around a week before move-in.",
+        products: ["totes", "mo-totes-stow"],
       },
       {
         q: "I'm using Totes & Stow. When do my packed totes get picked up?",
         a: "We'll schedule a pickup date with you during move-out week. You'll know the exact date and time before finals so you can have everything packed and ready.",
+        products: ["totes-stow", "mo-totes-stow"],
       },
       {
         q: "I'm using Totes & Stow. When do I get my totes back in the fall?",
         a: "We'll schedule a delivery date with you before move-in. Your totes will arrive at your new place ready to unpack.",
+        products: ["totes-stow", "mo-totes-stow"],
       },
     ],
   },

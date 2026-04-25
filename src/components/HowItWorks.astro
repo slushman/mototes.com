@@ -1,10 +1,41 @@
 ---
-const steps = [
-  { num: 1, title: "Book online", desc: "Pick your tote count and delivery date." },
-  { num: 2, title: "We deliver", desc: "Totes arrive clean and ready to pack." },
-  { num: 3, title: "Pack and move", desc: "Stack, roll, and load your stuff with ease." },
-  { num: 4, title: "Schedule pickup", desc: "Book a pickup and we'll come to you." },
-];
+import type { ProductSlug } from "../data/schools";
+
+interface Props {
+  /** When set, shows step copy specific to a single product. Defaults to the basic Totes flow. */
+  variant?: ProductSlug;
+}
+
+const { variant = "totes" } = Astro.props;
+
+interface Step {
+  num: number;
+  title: string;
+  desc: string;
+}
+
+const stepsByVariant: Record<ProductSlug, Step[]> = {
+  totes: [
+    { num: 1, title: "Book online", desc: "Pick your tote count and delivery date." },
+    { num: 2, title: "We deliver", desc: "Totes arrive clean and ready to pack." },
+    { num: 3, title: "Pack and move", desc: "Stack, roll, and load your stuff with ease." },
+    { num: 4, title: "Schedule pickup", desc: "Book a pickup and we'll come to you." },
+  ],
+  "totes-stow": [
+    { num: 1, title: "Book online", desc: "Pick your tote count and storage package." },
+    { num: 2, title: "We drop off totes", desc: "Empty totes arrive at your on-campus address, ready to pack." },
+    { num: 3, title: "Pack and drop off", desc: "Bring your packed totes to our campus spot on move-out day." },
+    { num: 4, title: "Pick up in fall", desc: "Grab your stored totes from the same campus spot." },
+  ],
+  "mo-totes-stow": [
+    { num: 1, title: "Book online", desc: "Pick your tote count and full-service package." },
+    { num: 2, title: "We drop off totes", desc: "Empty totes arrive at your dorm, ready to pack." },
+    { num: 3, title: "Pack up", desc: "Stack, roll, and load your stuff with ease." },
+    { num: 4, title: "We do the rest", desc: "Move-out pickup, summer storage, and fall return to your dorm." },
+  ],
+};
+
+const steps = stepsByVariant[variant];
 ---
 
 <section id="how-it-works" class="bg-page-alt py-14 md:py-20">
